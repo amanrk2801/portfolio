@@ -1,4 +1,4 @@
-# 🚀 Aman Kumar's Developer Portfolio
+# 🚀 Aman Kumbhalwar Developer Portfolio
 
 Hi, I'm **Aman Kumar**, a passionate **Full Stack Developer** with a strong focus on building efficient, high-scale applications using **JavaScript, React, Node.js**, and more. My expertise extends to modern web3 technologies, including **NFT marketplace** development and intelligent chatbots powered by **AI**.
 
