@@ -67,7 +67,7 @@ export default function Component() {
             <div className="md:w-1/3 bg-gradient-to-b from-blue-600 to-indigo-800 p-8 text-white">
               <div className="flex flex-col items-center mb-8">
                 <div className="w-48 h-48 rounded-full bg-white mb-4 overflow-hidden shadow-lg">
-                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1709708522739-6EtFPzQh553HdP6Od8ZXoNmDnvDdhn.jpeg" alt="Aman Kumar" className="w-full h-full object-cover" />
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1709708522739-6EtFPzQh553HdP6Od8ZXoNmDnvDdhn.jpeg" alt="Aman Kumbhalwar" className="w-full h-full object-cover" />
                 </div>
                 <h1 className="text-3xl font-bold">Aman Kumar</h1>
                 <p className="text-xl">Full-Stack Developer</p>
