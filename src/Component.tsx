@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Github, Linkedin, Mail, ExternalLink, Sun, Moon } from 'lucide-react'
+import React from 'react'
 
 export default function Component() {
   const [darkMode, setDarkMode] = useState(false)
