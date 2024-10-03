@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
     readonly VITE_REACT_APP_NEWS_API_KEY: string;
+    readonly REACT_APP_JSONBIN_KEY: string;
     // Add other environment variables here if needed
   }
   

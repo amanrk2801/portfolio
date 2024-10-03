@@ -20,9 +20,40 @@ const BlogPost: React.FC = () => {
   const [error, setError] = useState<string | null>(null)
   const { id } = useParams<{ id: string }>()
 
+  // useEffect(() => {
+  //   setLoading(true)
+  //   fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${ENV.REACT_APP_NEWS_API_KEY}`)
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch blog post')
+  //       }
+  //       return response.json()
+  //     })
+  //     .then(data => {
+  //       const selectedArticle = data.articles[Number(id)]
+  //       if (selectedArticle) {
+  //         setArticle(selectedArticle)
+  //       } else {
+  //         setError('Article not found')
+  //       }
+  //       setLoading(false)
+  //     })
+  //     .catch(err => {
+  //       setError(err.message)
+  //       setLoading(false)
+  //     })
+  // }, [id])
+
   useEffect(() => {
     setLoading(true)
-    fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${ENV.REACT_APP_NEWS_API_KEY}`)
+
+    // Fetch articles from jsonbin.io using the key from .env
+    fetch(`https://api.jsonbin.io/v3/b/${ENV.REACT_APP_JSONBIN_KEY}`, {
+      method: 'GET',
+      headers: {
+        'X-Master-Key': '$2a$10$AQoXfTUE47Bca7rJCKZSJelsW240JmCf5iTS03J6Xa.eFOGHH./4m' 
+      }
+    })
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch blog post')
@@ -30,7 +61,7 @@ const BlogPost: React.FC = () => {
         return response.json()
       })
       .then(data => {
-        const selectedArticle = data.articles[Number(id)]
+        const selectedArticle = data.record.articles[Number(id)]
         if (selectedArticle) {
           setArticle(selectedArticle)
         } else {

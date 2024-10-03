@@ -21,9 +21,35 @@ export default function BlogList() {
   const currentPage = Number(searchParams.get('page') || '1')
   const articlesPerPage = 5
 
+  // useEffect(() => {
+  //   setLoading(true)
+  //   fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${ENV.REACT_APP_NEWS_API_KEY}`)
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch blog posts')
+  //       }
+  //       return response.json()
+  //     })
+  //     .then(data => {
+  //       setArticles(data.articles)
+  //       setLoading(false)
+  //     })
+  //     .catch(err => {
+  //       setError(err.message)
+  //       setLoading(false)
+  //     })
+  // }, [])
+
   useEffect(() => {
     setLoading(true)
-    fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${ENV.REACT_APP_NEWS_API_KEY}`)
+
+    // Fetch articles from jsonbin.io using the provided API key
+    fetch(`https://api.jsonbin.io/v3/b/${ENV.REACT_APP_JSONBIN_KEY}`, {
+      method: 'GET',
+      headers: {
+        'X-Master-Key': '$2a$10$AQoXfTUE47Bca7rJCKZSJelsW240JmCf5iTS03J6Xa.eFOGHH./4m' 
+      }
+    })
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch blog posts')
@@ -31,7 +57,7 @@ export default function BlogList() {
         return response.json()
       })
       .then(data => {
-        setArticles(data.articles)
+        setArticles(data.record.articles)  // Access the 'articles' from the jsonbin.io response
         setLoading(false)
       })
       .catch(err => {
