@@ -1,6 +1,6 @@
 # 🚀 Aman Kumbhalwar Developer Portfolio
 
-🌟 [View My Portfolio](https://www.amankumbhalwar.com/))
+🌟 [View My Portfolio](https://www.amankumbhalwar.com/)
 
 ## 🛠️ Technologies & Tools
 
