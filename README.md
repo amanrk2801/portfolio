@@ -1,6 +1,6 @@
 # 🚀 Aman Kumbhalwar Developer Portfolio
 
-🌟 [View My Portfolio](https://your-portfolio-link.com)
+🌟 [View My Portfolio](https://www.amankumbhalwar.com/))
 
 ## 🛠️ Technologies & Tools
 
@@ -13,9 +13,9 @@
 
 ## 🔗 Let's Connect
 
-- [GitHub](https://github.com/your-github-username) 
-- [LinkedIn](https://linkedin.com/in/your-linkedin-profile) 
-- [Email](mailto:your-email@gmail.com)
+- [GitHub](https://github.com/amanrk2801) 
+- [LinkedIn](https://linkedin.com/in/amanrk2801) 
+- [Email](mailto:amanrk2801@gmail.com)
 
 ---
 
