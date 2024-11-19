@@ -314,7 +314,7 @@ export default function Component() {
                     <Mail size={24} />
                   </a>
                   <a
-                    href="https://drive.google.com/file/d/1KotXK8VKDvsD5KRZLIYhvSfUvOQQ4zMk/view"
+                    href="https://drive.google.com/file/d/1E7UqFyNBDKCcK5pkdbD0xquFWTZdrp7k/view"
                     download="Aman_Kumbhalwar.pdf"
                     target="_blank"
                     title="Download Resume"
