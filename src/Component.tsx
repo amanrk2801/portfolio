@@ -10,9 +10,11 @@ import {
   Moon,
   BookOpen,
   Download,
+  MessageSquare,
+  Phone,
 } from "lucide-react";
 import React from "react";
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Component() {
   const [darkMode, setDarkMode] = useState(true);
@@ -79,6 +81,9 @@ export default function Component() {
   //   "Git",
   // ];
 
+  const phoneNumber = "7821081179";
+  const whatsappLink = `https://wa.me/${phoneNumber}`;
+
   const skills = [
     {
       name: "C++",
@@ -136,7 +141,7 @@ export default function Component() {
 
   const SkillBadge = ({ skill }) => {
     const [isHovered, setIsHovered] = useState(false);
-  
+
     // Define animation variants for the tooltip
     const tooltipVariants = {
       hidden: {
@@ -146,7 +151,7 @@ export default function Component() {
         scale: 0.95,
         transition: {
           duration: 0.3,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         },
       },
       visible: {
@@ -156,7 +161,7 @@ export default function Component() {
         scale: 1,
         transition: {
           duration: 0.5,
-          type: 'spring',
+          type: "spring",
           stiffness: 300,
           damping: 20,
         },
@@ -168,28 +173,28 @@ export default function Component() {
         scale: 0.95,
         transition: {
           duration: 0.3,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         },
       },
     };
-  
+
     // Define animation variants for the badge
     const badgeVariants = {
       hover: {
         scale: 1.1,
-        backgroundColor: '#3B82F6', // Tailwind's blue-600
+        backgroundColor: "#3B82F6", // Tailwind's blue-600
         transition: {
-          type: 'spring',
+          type: "spring",
           stiffness: 300,
           damping: 10,
         },
       },
       initial: {
         scale: 1,
-        backgroundColor: '#1D4ED8', // Tailwind's blue-700
+        backgroundColor: "#1D4ED8", // Tailwind's blue-700
       },
     };
-  
+
     return (
       <div
         className="relative inline-block"
@@ -206,7 +211,7 @@ export default function Component() {
         >
           {skill.name}
         </motion.span>
-  
+
         {/* Animated Tooltip */}
         <AnimatePresence>
           {isHovered && (
@@ -323,11 +328,20 @@ export default function Component() {
                     <Download size={24} />
                   </a>
                   <a
-                    href="/blog"
-                    title="Blog"
+                    href={`tel:${phoneNumber}`}
+                    title="Phone"
                     className="hover:text-blue-300 transition-colors duration-300 cursor-pointer"
                   >
-                    <BookOpen size={24} />
+                    <Phone size={24} />
+                  </a>
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="WhatsApp"
+                    className="hover:text-green-300 transition-colors duration-300 cursor-pointer"
+                  >
+                    <MessageSquare size={24} />
                   </a>
                 </div>
               </div>
