@@ -319,7 +319,7 @@ export default function Component() {
                     <Mail size={24} />
                   </a>
                   <a
-                    href="https://drive.google.com/file/d/1NuMQJFdqvzEK7gJlgkLt4Sb0jbWER4tW/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1DO3oIImr4nhkiLo05Z1XvXZJi3Np5iyd/view?usp=sharing"
                     download="Aman_Kumbhalwar.pdf"
                     target="_blank"
                     title="Download Resume"
