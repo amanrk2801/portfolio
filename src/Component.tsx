@@ -29,22 +29,31 @@ export default function Component() {
 
   const projects = [
     {
-      title: "MovieMoods",
-      description:
-        "Built an intelligent movie discovery platform with mood-based recommendations, boosting user engagement through personalized content curation.",
-      tech: "React, Redux, Material UI",
-      date: "September 2023",
-      github: "https://github.com/amanrk2801/moviemoods",
-      live: "https://moviemoods.vercel.app/",
-    },
-    {
       title: "Full-Stack Medium Clone",
       description:
         "Built a complete MERN stack blogging platform with authentication, content management, and real-time features, delivering seamless reading and writing experiences.",
       tech: "MongoDB, Express.js, React, Node.js, TypeScript, Tailwind CSS",
-      date: "September 2023",
+      date: "October 2025",
       github: "https://github.com/amanrk2801/medium",
       live: "https://medium-weld-two.vercel.app/",
+    },
+    {
+      title: "Carpool Application",
+      description:
+        "Developed a comprehensive carpool platform with Spring Boot backend and React frontend, featuring user authentication, ride management, booking system, and user ratings.",
+      tech: "Spring Boot, React, Java, REST APIs, MySQL",
+      date: "August 2025",
+      github: "https://github.com/amanrk2801/carpool",
+      live: "http://carpoolconnect.me/",
+    },
+    {
+      title: "MovieMoods",
+      description:
+        "Built an intelligent movie discovery platform with mood-based recommendations, boosting user engagement through personalized content curation.",
+      tech: "React, Redux, Material UI",
+      date: "October 2024",
+      github: "https://github.com/amanrk2801/moviemoods",
+      live: "https://moviemoods.vercel.app/",
     },
     {
       title: "NFT Marketplace",
@@ -54,15 +63,6 @@ export default function Component() {
       date: "October 2023",
       github: "https://github.com/amanrk2801/nft-marketplace",
       live: "https://nft---marketplace.vercel.app/",
-    },
-    {
-      title: "Research Paper: Intelligent AI Chatbot",
-      description:
-        "Published groundbreaking research on AI chatbot technology in the prestigious International Research Journal of Modern Engineering and Technology Sciences.",
-      tech: "Research, AI, Natural Language Processing",
-      date: "June 2023",
-      github: "https://github.com/amanrk2801/Doctor_AI",
-      live: "https://www.irjmets.com/uploadedfiles/paper/issue_6_june_2023/41275/final/fin_irjmets1685775338.pdf",
     },
   ];
 
@@ -86,31 +86,6 @@ export default function Component() {
 
   const skills = [
     {
-      name: "C++",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
-    },
-    {
-      name: "Java",
-      image:
-        "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
-    },
-    {
-      name: "Python",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-    },
-    {
-      name: "HTML/CSS",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
-    },
-    {
-      name: "JavaScript",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-    },
-    {
       name: "React",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
@@ -120,18 +95,33 @@ export default function Component() {
       image: "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
     },
     {
+      name: "Spring Boot",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/7/79/Spring_Boot.svg",
+    },
+    {
       name: "Node.js",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
     },
     {
-      name: "Express",
+      name: "Express.js",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
     },
     {
       name: "MongoDB",
       image: "https://www.svgrepo.com/show/331488/mongodb.svg",
+    },
+    {
+      name: "MySQL",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg",
+    },
+    {
+      name: "AWS",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
     },
     {
       name: "Git",
@@ -280,12 +270,18 @@ export default function Component() {
                 <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
                   Education
                 </h2>
-                <p className="font-semibold">
-                  Bachelor of Engineering (Computer Science)
-                </p>
-                <p>Rashtrasant Tukadoji Maharaj Nagpur University</p>
-                <p>June 2019 - June 2023</p>
-                <p>CGPA: 7.10/10</p>
+                <div className="mb-4">
+                  <p className="font-semibold">
+                    Post Graduate Diploma in Advanced Computing (PG-DAC)
+                  </p>
+                  <p>August 2025</p>
+                </div>
+                <div>
+                  <p className="font-semibold">
+                    Bachelor of Engineering (Computer Science)
+                  </p>
+                  <p>June 2023</p>
+                </div>
               </div>
 
               <div>
