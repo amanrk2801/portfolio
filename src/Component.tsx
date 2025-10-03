@@ -31,25 +31,25 @@ export default function Component() {
     {
       title: "MovieMoods",
       description:
-        "Developed MovieMoods, an intuitive web app enabling users to explore movies based on mood and preferences, resulting in increased user engagement.",
+        "Built an intelligent movie discovery platform with mood-based recommendations, boosting user engagement through personalized content curation.",
       tech: "React, Redux, Material UI",
       date: "September 2023",
       github: "https://github.com/amanrk2801/moviemoods",
       live: "https://moviemoods.vercel.app/",
     },
     {
-      title: "Medium Clone",
+      title: "Full-Stack Medium Clone",
       description:
-        "Created a Medium clone application utilizing TypeScript, React, and Vite, featuring a modular architecture and responsive design for enhanced user experience. Integrated the ShadCN library for improved UI components.",
-      tech: "TypeScript, React, Vite, Tailwind CSS, ShadCN",
+        "Built a complete MERN stack blogging platform with authentication, content management, and real-time features, delivering seamless reading and writing experiences.",
+      tech: "MongoDB, Express.js, React, Node.js, TypeScript, Tailwind CSS",
       date: "September 2023",
-      github: "https://github.com/amanrk2801/mediumclone_v1",
-      live: "https://mediumclone-v1.vercel.app/",
+      github: "https://github.com/amanrk2801/medium",
+      live: "https://medium-weld-two.vercel.app/",
     },
     {
       title: "NFT Marketplace",
       description:
-        "Developed an NFT marketplace facilitating creation, purchase, and sale of digital art on the blockchain, resulting in a substantial increase in monthly transactions.",
+        "Created a full-stack blockchain marketplace for digital art trading, achieving significant transaction volume growth through Web3 integration.",
       tech: "React, Tailwind CSS, Solidity, Metamask, Material UI, Polygon",
       date: "October 2023",
       github: "https://github.com/amanrk2801/nft-marketplace",
@@ -58,7 +58,7 @@ export default function Component() {
     {
       title: "Research Paper: Intelligent AI Chatbot",
       description:
-        "Led a team effort resulting in the publication of a research paper on an Intelligent AI Chatbot in the esteemed International Research Journal of Modern Engineering and Technology Sciences (IRJMETS) website.",
+        "Published groundbreaking research on AI chatbot technology in the prestigious International Research Journal of Modern Engineering and Technology Sciences.",
       tech: "Research, AI, Natural Language Processing",
       date: "June 2023",
       github: "https://github.com/amanrk2801/Doctor_AI",
