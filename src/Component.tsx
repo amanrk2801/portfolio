@@ -56,13 +56,13 @@ export default function Component() {
       live: "https://moviemoods.vercel.app/",
     },
     {
-      title: "NFT Marketplace",
+      title: "Doctor AI — Medical Assistant",
       description:
-        "Created a full-stack blockchain marketplace for digital art trading, achieving significant transaction volume growth through Web3 integration.",
-      tech: "React, Tailwind CSS, Solidity, Metamask, Material UI, Polygon",
-      date: "October 2023",
-      github: "https://github.com/amanrk2801/nft-marketplace",
-      live: "https://nft---marketplace.vercel.app/",
+        "A modern full-stack medical application with React frontend and Flask backend that analyzes symptoms using AI and provides medical guidance. Features Google Gemini integration for intelligent medical conversations, a medical database, symptom analysis, and Indian emergency services.",
+      tech: "React, Bootstrap, Flask, Google Gemini, Python, Kaggle",
+      date: "November 2025",
+      github: "https://github.com/amanrk2801/Doctor_AI/",
+      live: "https://doctor-ai-phi-three.vercel.app/",
     },
   ];
 
