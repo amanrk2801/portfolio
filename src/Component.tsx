@@ -12,6 +12,7 @@ import {
   Download,
   MessageSquare,
   Phone,
+  Video, // CHANGED: Imported Video icon for Loom/Demo links
 } from "lucide-react";
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,7 +28,20 @@ export default function Component() {
     }
   }, [darkMode]);
 
+  // CHANGED: Reordered projects to put "Doctor AI" FIRST (The Hero Project)
   const projects = [
+    {
+      title: "Doctor AI — Medical Assistant",
+      // CHANGED: Made description punchier highlighting AI integration
+      description:
+        "AI-Powered medical assistant built with React and Flask. Integrates Google Gemini LLM to analyze symptoms and provide medical guidance. Features a custom medical database and emergency service locator.",
+      tech: "React, Python (Flask), Google Gemini API, Bootstrap",
+      date: "November 2025",
+      github: "https://github.com/amanrk2801/Doctor_AI/",
+      live: "https://doctor-ai-phi-three.vercel.app/",
+      video: "#", // CHANGED: Add your Loom video link here
+      featured: true, // CHANGED: Added flag to highlight this project
+    },
     {
       title: "Full-Stack Medium Clone",
       description:
@@ -36,6 +50,7 @@ export default function Component() {
       date: "October 2025",
       github: "https://github.com/amanrk2801/medium",
       live: "https://medium-weld-two.vercel.app/",
+      video: "#", // CHANGED: Add video link
     },
     {
       title: "Carpool Application",
@@ -45,6 +60,7 @@ export default function Component() {
       date: "August 2025",
       github: "https://github.com/amanrk2801/carpool",
       live: "http://carpoolconnect.me/",
+      video: "#", // CHANGED: Add video link
     },
     {
       title: "MovieMoods",
@@ -55,31 +71,7 @@ export default function Component() {
       github: "https://github.com/amanrk2801/moviemoods",
       live: "https://moviemoods.vercel.app/",
     },
-    {
-      title: "Doctor AI — Medical Assistant",
-      description:
-        "A modern full-stack medical application with React frontend and Flask backend that analyzes symptoms using AI and provides medical guidance. Features Google Gemini integration for intelligent medical conversations, a medical database, symptom analysis, and Indian emergency services.",
-      tech: "React, Bootstrap, Flask, Google Gemini, Python, Kaggle",
-      date: "November 2025",
-      github: "https://github.com/amanrk2801/Doctor_AI/",
-      live: "https://doctor-ai-phi-three.vercel.app/",
-    },
   ];
-
-  // const skills = [
-  //   "C++",
-  //   "Java",
-  //   "Python",
-  //   "HTML/CSS",
-  //   "JavaScript",
-  //   "React",
-  //   "React",
-  //   "Redux",
-  //   "Node.js",
-  //   "Express",
-  //   "MongoDB",
-  //   "Git",
-  // ];
 
   const phoneNumber = "7821081179";
   const whatsappLink = `https://wa.me/${phoneNumber}`;
@@ -91,13 +83,18 @@ export default function Component() {
         "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
     },
     {
-      name: "Redux",
-      image: "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
-    },
-    {
-      name: "Spring Boot",
+      name: "Spring Boot", // CHANGED: Moved Spring Boot up to show Backend strength
       image:
         "https://upload.wikimedia.org/wikipedia/commons/7/79/Spring_Boot.svg",
+    },
+    {
+      name: "Google Gemini", // CHANGED: Added AI Skill Explicitly
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg",
+    },
+    {
+      name: "Redux",
+      image: "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
     },
     {
       name: "Node.js",
@@ -132,17 +129,13 @@ export default function Component() {
   const SkillBadge = ({ skill }) => {
     const [isHovered, setIsHovered] = useState(false);
 
-    // Define animation variants for the tooltip
     const tooltipVariants = {
       hidden: {
         opacity: 0,
         y: 20,
         rotate: -5,
         scale: 0.95,
-        transition: {
-          duration: 0.3,
-          ease: "easeInOut",
-        },
+        transition: { duration: 0.3, ease: "easeInOut" },
       },
       visible: {
         opacity: 1,
@@ -161,27 +154,19 @@ export default function Component() {
         y: 20,
         rotate: 5,
         scale: 0.95,
-        transition: {
-          duration: 0.3,
-          ease: "easeInOut",
-        },
+        transition: { duration: 0.3, ease: "easeInOut" },
       },
     };
 
-    // Define animation variants for the badge
     const badgeVariants = {
       hover: {
         scale: 1.1,
-        backgroundColor: "#3B82F6", // Tailwind's blue-600
-        transition: {
-          type: "spring",
-          stiffness: 300,
-          damping: 10,
-        },
+        backgroundColor: "#3B82F6",
+        transition: { type: "spring", stiffness: 300, damping: 10 },
       },
       initial: {
         scale: 1,
-        backgroundColor: "#1D4ED8", // Tailwind's blue-700
+        backgroundColor: "#1D4ED8",
       },
     };
 
@@ -191,23 +176,21 @@ export default function Component() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Animated Badge */}
         <motion.span
           key={skill.name}
           variants={badgeVariants}
           initial="initial"
           whileHover="hover"
-          className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm cursor-pointer shadow-md"
+          className="px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm cursor-pointer shadow-md text-white flex items-center gap-1"
         >
           {skill.name}
         </motion.span>
 
-        {/* Animated Tooltip */}
         <AnimatePresence>
           {isHovered && (
             <motion.div
               className="absolute z-10 p-2 w-32 h-32 bg-white border border-gray-300 rounded shadow-lg 
-                -top-36 left-1/2 transform -translate-x-1/2"
+                -top-36 left-1/2 transform -translate-x-1/2 flex items-center justify-center"
               variants={tooltipVariants}
               initial="hidden"
               animate="visible"
@@ -232,7 +215,7 @@ export default function Component() {
           <div className="relative">
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-600 cursor-pointer"
+              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white transition-colors duration-300 hover:bg-gray-300 dark:hover:bg-gray-600 cursor-pointer"
               aria-label="Toggle dark mode"
             >
               {darkMode ? <Sun size={24} /> : <Moon size={24} />}
@@ -242,21 +225,27 @@ export default function Component() {
             {/* Left Panel */}
             <div className="lg:w-1/3 bg-gradient-to-b from-blue-900 to-indigo-800 p-6 sm:p-8 text-white">
               <div className="flex flex-col items-center mb-6 sm:mb-8">
-                <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-white mb-4 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-white mb-4 overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border-4 border-blue-400">
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1709708522739-6EtFPzQh553HdP6Od8ZXoNmDnvDdhn.jpeg"
                     alt="Aman Kumbhalwar"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h1 className="text-2xl sm:text-3xl font-bold">
+                <h1 className="text-2xl sm:text-3xl font-bold text-center">
                   Aman Kumbhalwar
                 </h1>
-                <p className="text-lg sm:text-xl">Full-Stack Developer</p>
+                {/* CHANGED: Updated Title to define your new identity */}
+                <p className="text-lg sm:text-xl text-center text-blue-200 mt-2 font-medium">
+                  AI-Augmented Full Stack Engineer
+                </p>
+                <p className="text-sm text-center text-blue-300">
+                  Spring Boot & MERN Expert
+                </p>
               </div>
 
               <div className="mb-6 sm:mb-8">
-                <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+                <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 border-b border-blue-500 pb-2">
                   Skills
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -267,34 +256,29 @@ export default function Component() {
               </div>
 
               <div className="mb-6 sm:mb-8">
-                <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+                <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 border-b border-blue-500 pb-2">
                   Education
                 </h2>
                 <div className="mb-4">
-                  <p className="font-semibold">
-                    Post Graduate Diploma in Advanced Computing (PG-DAC)
-                  </p>
-                  <p>August 2025</p>
+                  <p className="font-semibold text-lg">PG Diploma in Advanced Computing (PG-DAC)</p>
+                  <p className="text-blue-200">CDAC • August 2025</p>
                 </div>
                 <div>
-                  <p className="font-semibold">
-                    Bachelor of Engineering (Computer Science)
-                  </p>
-                  <p>June 2023</p>
+                  <p className="font-semibold text-lg">B.E. Computer Science</p>
+                  <p className="text-blue-200">June 2023</p>
                 </div>
               </div>
 
               <div>
-                <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
-                  Contact
+                <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 border-b border-blue-500 pb-2">
+                  Connect
                 </h2>
-                <div className="flex gap-4">
+                <div className="flex gap-4 justify-center sm:justify-start">
                   <a
                     href="https://github.com/amanrk2801"
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="GitHub"
-                    className="hover:text-blue-300 transition-colors duration-300 cursor-pointer"
+                    className="hover:text-blue-300 hover:scale-110 transition-all duration-300"
                   >
                     <Github size={24} />
                   </a>
@@ -302,40 +286,28 @@ export default function Component() {
                     href="https://www.linkedin.com/in/amanrk2801"
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="LinkedIn"
-                    className="hover:text-blue-300 transition-colors duration-300 cursor-pointer"
+                    className="hover:text-blue-300 hover:scale-110 transition-all duration-300"
                   >
                     <Linkedin size={24} />
                   </a>
                   <a
                     href="mailto:amanrk2801@gmail.com"
-                    title="Email"
-                    className="hover:text-blue-300 transition-colors duration-300 cursor-pointer"
+                    className="hover:text-blue-300 hover:scale-110 transition-all duration-300"
                   >
                     <Mail size={24} />
                   </a>
                   <a
                     href="https://drive.google.com/file/d/1DO3oIImr4nhkiLo05Z1XvXZJi3Np5iyd/view?usp=sharing"
-                    download="Aman_Kumbhalwar.pdf"
                     target="_blank"
-                    title="Download Resume"
-                    className="hover:text-blue-300 transition-colors duration-300 cursor-pointer"
+                    className="hover:text-blue-300 hover:scale-110 transition-all duration-300"
                   >
                     <Download size={24} />
-                  </a>
-                  <a
-                    href={`tel:${phoneNumber}`}
-                    title="Phone"
-                    className="hover:text-blue-300 transition-colors duration-300 cursor-pointer"
-                  >
-                    <Phone size={24} />
                   </a>
                   <a
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="WhatsApp"
-                    className="hover:text-green-300 transition-colors duration-300 cursor-pointer"
+                    className="hover:text-green-400 hover:scale-110 transition-all duration-300"
                   >
                     <MessageSquare size={24} />
                   </a>
@@ -344,49 +316,103 @@ export default function Component() {
             </div>
 
             {/* Right Panel */}
-            <div className="lg:w-2/3 p-6 sm:p-8 bg-white dark:bg-gray-900">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-blue-800 dark:text-blue-300">
-                Projects
+            <div className="lg:w-2/3 p-6 sm:p-8 bg-white dark:bg-gray-900 overflow-y-auto">
+              
+              {/* CHANGED: Added "About Me" Section to narrate your story and justify the gap/CDAC */}
+              <div className="mb-8">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-blue-800 dark:text-blue-300 flex items-center gap-2">
+                   About Me
+                </h2>
+                <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg border-l-4 border-blue-500 text-gray-700 dark:text-gray-300">
+                  <p className="leading-relaxed">
+                    B.E. (CS) graduate transformed into a <strong>Specialized Software Engineer</strong> through <strong>CDAC (2025)</strong>. 
+                    Unlike traditional developers, I leverage <strong>Generative AI & LLMs</strong> to build scalable applications faster and more efficiently. 
+                    I combine strong foundational knowledge in <strong>Java Spring Boot</strong> with modern <strong>React</strong> architectures to solve real-world business problems.
+                  </p>
+                </div>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-blue-800 dark:text-blue-300 flex items-center gap-2">
+                <BookOpen size={28} /> Proof of Work
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              
+              <div className="grid grid-cols-1 gap-6">
                 {projects.map((project, index) => (
                   <div
                     key={index}
-                    className="project-card bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                    // CHANGED: Added visual styling for "Featured" project
+                    className={`project-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden border ${
+                      project.featured 
+                        ? "border-blue-500 dark:border-blue-400 ring-2 ring-blue-100 dark:ring-blue-900" 
+                        : "border-gray-100 dark:border-gray-700"
+                    }`}
                   >
+                    {/* CHANGED: Added "Featured" Badge */}
+                    {project.featured && (
+                      <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                        FEATURED
+                      </div>
+                    )}
+                    
                     <div>
-                      <h3 className="text-lg sm:text-xl font-semibold mb-2 text-blue-700 dark:text-blue-300">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 sm:mb-4">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-xl sm:text-2xl font-bold text-blue-700 dark:text-blue-300">
+                          {project.title}
+                        </h3>
+                      </div>
+                      
+                      <p className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-3 bg-gray-100 dark:bg-gray-700 inline-block px-2 py-1 rounded">
                         {project.date}
                       </p>
-                      <p className="mb-2 sm:mb-4 text-sm sm:text-base text-gray-800 dark:text-gray-300">
+                      
+                      <p className="mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300">
                         {project.description}
                       </p>
-                      <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-2 sm:mb-4">
-                        <span className="font-semibold">Technologies:</span>{" "}
-                        {project.tech}
-                      </p>
+                      
+                      <div className="mb-4">
+                         <span className="text-sm font-bold text-gray-900 dark:text-white block mb-2">Tech Stack:</span>
+                         <div className="flex flex-wrap gap-2">
+                           {project.tech.split(',').map((t, i) => (
+                             <span key={i} className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-xs rounded-md font-medium">
+                               {t.trim()}
+                             </span>
+                           ))}
+                         </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between mt-2 sm:mt-4">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 transition-colors duration-300 cursor-pointer text-sm"
-                      >
-                        <Github size={16} className="mr-1" />
-                        GitHub
-                      </a>
+
+                    <div className="flex flex-wrap gap-3 mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                      {/* CHANGED: Added Watch Demo Button */}
+                      {project.video && (
+                         <a
+                         href={project.video}
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-300 text-sm font-medium"
+                       >
+                         <Video size={16} />
+                         Watch Demo
+                       </a>
+                      )}
+                      
                       <a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-200 transition-colors duration-300 cursor-pointer text-sm"
+                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300 text-sm font-medium"
                       >
-                        <ExternalLink size={16} className="mr-1" />
-                        Live Demo
+                        <ExternalLink size={16} />
+                        Live App
+                      </a>
+
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-colors duration-300 text-sm font-medium"
+                      >
+                        <Github size={16} />
+                        Code
                       </a>
                     </div>
                   </div>
