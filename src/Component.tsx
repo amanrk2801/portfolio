@@ -39,7 +39,7 @@ export default function Component() {
       date: "November 2025",
       github: "https://github.com/amanrk2801/Doctor_AI/",
       live: "https://doctor-ai-phi-three.vercel.app/",
-      video: "#", // CHANGED: Add your Loom video link here
+      video: "../public/videos/Medical-Symptom-Checker---AI-Powered.webm", // CHANGED: Add your Loom video link here
       featured: true, // CHANGED: Added flag to highlight this project
     },
     {
