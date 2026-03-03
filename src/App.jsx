@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Sidebar } from './components/sidebar/Sidebar'
+import { Sidebar } from './components/Sidebar/Sidebar'
 import { MainContent } from './components/MainContent/MainContent'
 import './App.css'
 
